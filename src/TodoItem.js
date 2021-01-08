@@ -1,9 +1,13 @@
 import React from 'react'
 
-const TodoItem = () => {
+const TodoItem = ({todo}) => {
     return (
-        <div>
-            
+        <div className='todoItem__container'>
+            <p>{todo.todoPrompt}</p>
+            <div>
+                <button>Edit</button>
+                <button>Delete</button>
+            </div>
         </div>
     )
 }
