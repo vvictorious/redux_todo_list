@@ -4,7 +4,7 @@ const TodoItem = ({todo}) => {
     return (
         <div className='todoItem__container'>
             <h5>#1</h5>            
-            <p>{todo.todoPrompt}</p>
+            <p>{todo.name}</p>
             <div>
                 <button>Edit</button>
                 <button>Delete</button>

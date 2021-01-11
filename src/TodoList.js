@@ -1,7 +1,11 @@
 import React, {Fragment} from 'react'
 import TodoItem from './TodoItem'
+import { useSelector } from 'react-redux'
 
 const TodoList = () => {
+    
+    const todos = useSelector(state => state)
+
     const hardCodedTodos = [
         {
             id: 1,
@@ -18,7 +22,7 @@ const TodoList = () => {
     ]
     return (
         <Fragment>
-            {hardCodedTodos.map(todo => (
+            {todos.map(todo => (
                 <TodoItem key={todo.id} todo={todo} />
             ))}
         </Fragment>
