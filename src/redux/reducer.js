@@ -1,10 +1,11 @@
+import {todos} from './state'
 import {
     ADD_TODO,
     DELETE_TODO,
     UPDATE_TODO
 } from './actions'
 
-export const reducer = (state, action) => {
+export const reducer = (state = todos, action) => {
     switch (action.type) {
         case ADD_TODO:
             break
