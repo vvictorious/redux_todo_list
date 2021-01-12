@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { addTodo } from './redux/actions'
 import { useDispatch } from 'react-redux'
+import { v1 as uuid } from 'uuid'
 
 const AddTodoInput = () => {
 
@@ -11,7 +12,12 @@ const AddTodoInput = () => {
     const onSubmit = e => {
         e.preventDefault()
         console.log(text)
-        dispatch(addTodo(text))
+        const payload = {
+            id: uuid(),
+            name: text
+        }
+        console.log(payload)
+        // dispatch(addTodo(payload))
         setText('')
     }
 
