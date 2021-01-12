@@ -10,9 +10,6 @@ export const reducer = (state = todos, action) => {
         case ADD_TODO:
             break
         case DELETE_TODO:
-            // let newTodos = [...state]
-            // newTodos.filter(todo => todo.id !== action.payload)
-            // return newTodos
             return [
                 ...state.filter(todo => todo.id !== action.payload)
             ]
