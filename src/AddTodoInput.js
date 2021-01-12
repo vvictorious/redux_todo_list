@@ -11,13 +11,11 @@ const AddTodoInput = () => {
 
     const onSubmit = e => {
         e.preventDefault()
-        console.log(text)
         const payload = {
             id: uuid(),
             name: text
         }
-        console.log(payload)
-        // dispatch(addTodo(payload))
+        dispatch(addTodo(payload))
         setText('')
     }
 

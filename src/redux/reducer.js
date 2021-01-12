@@ -8,7 +8,9 @@ import {
 export const reducer = (state = todos, action) => {
     switch (action.type) {
         case ADD_TODO:
-            break
+            let newTodos = [...state]
+            newTodos.push(action.payload)
+            return newTodos
         case DELETE_TODO:
             return [
                 ...state.filter(todo => todo.id !== action.payload)
