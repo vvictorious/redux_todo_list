@@ -8,7 +8,7 @@ const TodoItem = ({todo}) => {
 
     return (
         <div className='todoItem__container'>
-            <h5>#{todo.id}</h5>            
+            <h5>#{todo.id.length > 1 ? todo.id[2]: todo.id}</h5>            
             <p>{todo.name}</p>
             <div>
                 <button>Edit</button>
