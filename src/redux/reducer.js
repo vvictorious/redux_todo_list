@@ -6,9 +6,10 @@ import {
 } from './actions'
 
 export const reducer = (state = todos, action) => {
+    let newTodos
     switch (action.type) {
         case ADD_TODO:
-            let newTodos = [...state]
+            newTodos = [...state]
             newTodos.push(action.payload)
             return newTodos
         case DELETE_TODO:
@@ -16,7 +17,18 @@ export const reducer = (state = todos, action) => {
                 ...state.filter(todo => todo.id !== action.payload)
             ]
         case UPDATE_TODO:
-            break
+                newTodos = [...state]
+                let index = -1
+                for(let i = 0; i < newTodos.length; i++) {
+                    index++;
+                    if(newTodos[i].id == action.payload.id) {
+                        break;
+                    }
+                }
+                if (index !== -1) {
+                    newTodos[index] = action.payload
+                    return newTodos
+                }
         default:
             return state
     }

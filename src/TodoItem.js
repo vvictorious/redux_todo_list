@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
-import { deleteTodo } from './redux/actions'
+import { deleteTodo, updateTodo } from './redux/actions'
 
 const TodoItem = ({todo}) => {
 
@@ -26,8 +26,12 @@ const TodoItem = ({todo}) => {
             </div>      
             <div>
                 <button onClick={ () => {
+                    dispatch(updateTodo({
+                        ...todo,
+                        name: name
+                    }))
                     if (edit) {
-                        setName('')
+                        setName(todo.naame)
                     }
                     setEdit(!edit)
                 }}>
